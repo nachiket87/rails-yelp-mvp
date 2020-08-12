@@ -13,10 +13,10 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    restaurant_new = Restaurant.new(restaurant_params)
-    restaurant_new.save
+    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.save
 
-    redirect_to restaurant_path restaurant_new
+    redirect_to restaurant_path @restaurant
   end
 
   private
